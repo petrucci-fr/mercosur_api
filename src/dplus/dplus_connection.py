@@ -11,7 +11,7 @@ def get_data(query: str):
 
     # define DPlus database connection string
     CONNECTION_STRING = f"""
-        DSN={os.getenv('DSN')};
+        DSN={{FreeTDS}};
         HOST={os.getenv('HOST')};
         DB={os.getenv('DB')};
         UID={os.getenv('UID')};
@@ -19,7 +19,8 @@ def get_data(query: str):
         PORT={os.getenv('PORT')};
     """
 
-   # DSN={{FreeTDS}};
+    # DSN={{FreeTDS}};
+    # DSN={os.getenv('DSN')};
 
     # instantiate connection and cursor objects
     connection = pyodbc.connect(CONNECTION_STRING)
